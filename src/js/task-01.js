@@ -3,8 +3,8 @@ const countCategory = headings.length;
 
 console.log(`Number of categories: ${countCategory}`);
 
-for (const headerItem of [...headings]) {
-	const itemsFromCategory = [...headerItem.nextElementSibling.children];
+for (const headerItem of headings) {
+	const itemsFromCategory = headerItem.nextElementSibling.children;
 
 	console.log(`Category: ${headerItem.textContent}`);
 
