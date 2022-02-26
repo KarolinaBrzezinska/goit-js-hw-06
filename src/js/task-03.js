@@ -15,16 +15,35 @@ const images = [
 
 const $imgUrl = [];
 const $imgAlt = [];
+const $ul = document.querySelector("ul");
 
 for (const img of images) {
 	$imgUrl.push(img.url);
 	$imgAlt.push(img.alt);
 }
 
-const $ul = document.querySelector("ul");
 
 const $imgWithAttributes = images.map(
 	(img, index) =>
-		`<li><img src = "${$imgUrl[index]}" alt = "${$imgAlt[index]}"> </li> `
+		`<li><img src = "${$imgUrl[index]}" alt = "${$imgAlt[index]}" class="my__image"> </li> `
 );
 $ul.insertAdjacentHTML("afterbegin", $imgWithAttributes);
+
+const $childrenUl = $ul.children;
+
+for (const $child of $childrenUl) {
+	$child.style.display = "inline-block";
+	
+}
+
+const $images = document.querySelectorAll("img");
+
+
+for (const image of $images) {
+	image.style.display = "flex";
+	image.style.flexDirection = "row";
+	image.style.width = "300px";	
+	
+}
+
+
