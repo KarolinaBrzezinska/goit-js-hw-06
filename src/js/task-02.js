@@ -6,16 +6,24 @@ const ingredients = [
 	"Herbs",
 	"Condiments",
 ];
-
 const $ul = document.querySelector("ul");
-const $newLi = [];
+const fragment = document.createDocumentFragment();
 
 ingredients.forEach((ing) => {
 	const newItem = document.createElement("li");
 	newItem.textContent = ing;
 	newItem.classList = "item";
-	
-	$newLi.push(newItem);
-	});
+	fragment.append(newItem);
+});
 
-$ul.append(...$newLi);
+$ul.append(fragment);
+
+// sposób II
+// const $ul = document.querySelector("ul");
+
+// ingredients.forEach((ing) => {
+// 	const newItem = document.createElement("li");
+// 	newItem.textContent = ing;
+// 	newItem.classList = "item";
+// 	$ul.append(newItem);
+// });
