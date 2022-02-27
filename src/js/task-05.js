@@ -1,17 +1,13 @@
-let input = document.querySelector("#name-input");
-let output = document.querySelector("#name-output");
+let $input = document.querySelector("#name-input");
+let $output = document.querySelector("#name-output");
 
-input.addEventListener("input", inputChange);
+$input.addEventListener("input", inputChange);
 
 function inputChange(e) {
-	input = e.currentTarget.value;
-	if (input !== "") {
-		output.textContent = e.currentTarget.value;
+	$input = e.currentTarget.value;
+	if ($input !== "") {
+		$output.textContent = e.currentTarget.value;
 	} else {
-		output.textContent = "Anonymous";
+		$output.textContent = "Anonymous";
 	}
 }
-
-const $p = document.querySelector("p");
-$p.textContent = "siema";
-console.log($p)

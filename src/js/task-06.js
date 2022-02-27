@@ -1,9 +1,12 @@
-const $textInput = document.getElementById("validation-input");
+const input = document.querySelector("#validation-input");
+const inputLength = input.dataset.length;
 
-$textInput.addEventListener("blur", () => {
-	if ($textInput.value.length > $textInput.dataset.length) {
-		$textInput.setAttribute("class", "valid");
+input.addEventListener("blur", (event) => {
+	if (event.target.value.length == Number(inputLength)) {
+		input.classList.add("valid");
+		input.classList.remove("invalid");
 	} else {
-		$textInput.setAttribute("class", "invalid");
+		input.classList.remove("valid");
+		input.classList.add("invalid");
 	}
 });
